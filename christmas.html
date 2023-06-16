@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Days till christmas:<br>
+  <input type="text" id="output"><br>
+  <script>
+    let today=new Date();
+    let christmas=new Date(today.getFullYear(),11,25);
+    if(christmas.getMonth()==11 && christmas.getDate()>25){
+      christmas.setFullYear(christmas.getFullYear()+1);
+    }
+    let timediff=Math.abs(christmas.getTime()-today.getTime());
+    let days=Math.ceil(timediff/(1000*3600*24));
+    document.getElementById("output").value=days;
+  </script>
+</body>
+</html>
